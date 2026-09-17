@@ -93,6 +93,13 @@ python tools/verify_delivery.py
 - [版本演进](docs/CHANGELOG.md)：保留 v1–v6 的过程，历史效果不冒充最终效果。
 - [验证与已知限制](docs/VALIDATION.md)：自动检查覆盖范围与尚未实测项目。
 
+## 待更新
+
+- [ ] 完成 VTube Studio 导入与摄像头／手机面捕实测。
+- [ ] 配置眨眼、转头、张嘴映射及歪头 ±12° 限幅。
+- [ ] 调试麦克风口型与表情快捷键。
+- [ ] 补充 OBS 直播／录制教程和实测效果演示。
+
 ## 来源与权利
 
 使用 [PSD2Live](https://github.com/tsunehimatoi/psd2live) 和 [See-through](https://github.com/shitagaki-lab/see-through)；[AstraLayering](https://github.com/wu-tian807/AstraLayering) 仅作调研，未使用其推理结果。
