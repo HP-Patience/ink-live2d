@@ -96,3 +96,5 @@ python tools/verify_delivery.py
 使用 [PSD2Live](https://github.com/tsunehimatoi/psd2live) 和 [See-through](https://github.com/shitagaki-lab/see-through)；[AstraLayering](https://github.com/wu-tian807/AstraLayering) 仅作调研，未使用其推理结果。
 
 **不重新分发专有 Cubism Core、完整官方 SDK、神经网络权重或本地运行环境。** 下载入口、源码固定版本及本项目修改均已保留。原画、衍生模型和第三方代码的权利分别处理，**没有将整仓库声明为 MIT**。详见 [权利与第三方许可](docs/RIGHTS.md)。
+
+完整制作 ZIP 保留本项目全部资料与固定版本工具代码；为控制附件体积，不打包 PSD2Live 上游自带的示例模型二进制及宣传图片。需要这些上游素材时请递归克隆子模块。

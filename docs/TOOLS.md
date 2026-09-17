@@ -93,3 +93,5 @@ python tools/infer.py
 | fix_portrait_v6.py | 直线收窄脖颈、独立后衣领；包含像素与几何断言 |
 | BuildPortrait.java | 调用 PSD2Live，设置下睫毛父变形器 |
 | rebuild.py | 串联最终流程，核验全部最终图层 |
+
+完整制作 ZIP 保留本项目全部资料与固定版本工具代码；为控制附件体积，不打包 PSD2Live 上游自带的示例模型二进制及宣传图片。需要这些上游素材时请递归克隆子模块。
