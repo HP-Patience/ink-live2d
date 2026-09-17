@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "panelBounds": {
+    "min": -12,
+    "max": 12
+  },
+  "frames": 236,
+  "mouseTiltMin": -12,
+  "mouseTiltMax": 12,
+  "maxYaw": 45,
+  "manualEndpointsPass": true
+}

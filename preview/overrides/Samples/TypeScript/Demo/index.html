@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ink Portrait · Live2D Preview</title>
+  <style>
+    html, body {
+      overflow: hidden;
+      margin: 0;
+    }
+    html {
+      overscroll-behavior-x: none;
+      touch-action: none;
+    }
+    body {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    body > canvas:only-child {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+  <!-- Live2DCubismCore script -->
+  <script src = "./Core/live2dcubismcore.js"></script>
+  <!-- Build script -->
+  <script src = "./src/main.ts" type="module"></script>
+</head>
+<body>
+
+<style>
+#controls{position:fixed;left:20px;bottom:20px;width:220px;padding:18px;border:1px solid #ffffff22;border-radius:14px;background:#11151beb;color:#e7e8ea;font:13px system-ui;box-shadow:0 8px 35px #0005;backdrop-filter:blur(12px)}
+#controls h1{font-size:17px;letter-spacing:2px;margin:0 0 5px}#controls small{color:#a1a9b5;display:block;margin-bottom:12px}#controls label{display:flex;align-items:center;gap:10px;margin:10px 0}#controls input{min-width:0;flex:1;accent-color:#d0d8e4}#controls button{border:1px solid #ffffff33;background:#ffffff12;color:inherit;border-radius:6px;padding:7px 11px;cursor:pointer}#controls button:focus-visible,#controls input:focus-visible{outline:2px solid #fff;outline-offset:3px}#controls .buttons{display:flex;gap:8px}
+@media(max-width:600px){#controls{left:10px;bottom:10px;width:180px;padding:12px}}
+</style>
+<aside id="controls" aria-label="Live2D 预览控制">
+<h1>INK PORTRAIT</h1><small>真实 Live2D 模型 · Cubism Runtime</small>
+<div class="buttons"><button id="idle">自动动作</button><button id="reset">回到正脸</button></div>
+<label>左右<input aria-label="左右转头" data-param="ParamAngleX" type="range" min="-25" max="25" value="0" step=".5"></label>
+<label>上下<input aria-label="上下转头" data-param="ParamAngleY" type="range" min="-18" max="18" value="0" step=".5"></label>
+<label>歪头<input aria-label="歪头" data-param="ParamAngleZ" type="range" min="-12" max="12" value="0" step=".5"></label>
+<label>睁眼<input aria-label="睁眼程度" data-param="eyes" type="range" min="0" max="1" value="1" step=".01"></label>
+<label>口型<input aria-label="张嘴程度" data-param="ParamMouthOpenY" type="range" min="0" max="1" value="0" step=".01"></label>
+<small id="status" role="status">自动动作 / 鼠标视线跟随</small>
+</aside>
+<script>
+const inputs=[...document.querySelectorAll('#controls input')];
+for(const el of inputs)el.addEventListener('input',()=>{const q=window.live2dQA;if(!q)return;q.freeze=true;q.parameters={};for(const e of inputs){const id=e.dataset.param,v=Number(e.value);if(id==='eyes'){q.parameters.ParamEyeLOpen=v;q.parameters.ParamEyeROpen=v}else q.parameters[id]=v}document.querySelector('#status').textContent='手动参数控制'});
+document.querySelector('#idle').onclick=()=>{const q=window.live2dQA;if(q){q.parameters={};q.freeze=false}document.querySelector('#status').textContent='自动动作 / 鼠标视线跟随'};
+document.querySelector('#reset').onclick=()=>{for(const e of inputs)e.value=e.dataset.param==='eyes'?'1':'0';inputs[0].dispatchEvent(new Event('input'))};
+</script>
+
+</body>
+</html>

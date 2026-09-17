@@ -1,0 +1,6 @@
+{
+  "name": "ink-portrait-live2d-qa",
+  "private": true,
+  "scripts": {"test:browser": "node tests/run_browser.mjs"},
+  "devDependencies": {"playwright": "1.58.2"}
+}

@@ -1,0 +1,712 @@
+{
+  "model": "InkPortrait",
+  "runtime": "Official Cubism SDK for Web 5-r.5",
+  "drawables": 22,
+  "vertices": 4370,
+  "parameters": [
+    {
+      "id": "ParamAngleX",
+      "min": -45,
+      "max": 45
+    },
+    {
+      "id": "ParamAngleY",
+      "min": -30,
+      "max": 30
+    },
+    {
+      "id": "ParamAngleZ",
+      "min": -30,
+      "max": 30
+    },
+    {
+      "id": "ParamBodyAngleX",
+      "min": -10,
+      "max": 10
+    },
+    {
+      "id": "ParamBodyAngleY",
+      "min": -10,
+      "max": 10
+    },
+    {
+      "id": "ParamBodyAngleZ",
+      "min": -10,
+      "max": 10
+    },
+    {
+      "id": "ParamEyeLOpen",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "id": "ParamEyeROpen",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "id": "ParamEyeBallX",
+      "min": -1,
+      "max": 1
+    },
+    {
+      "id": "ParamEyeBallY",
+      "min": -1,
+      "max": 1
+    },
+    {
+      "id": "ParamEyeBallForm",
+      "min": -1,
+      "max": 1
+    },
+    {
+      "id": "ParamBrowLY",
+      "min": -1,
+      "max": 1
+    },
+    {
+      "id": "ParamBrowRY",
+      "min": -1,
+      "max": 1
+    },
+    {
+      "id": "ParamMouthForm",
+      "min": -1,
+      "max": 1
+    },
+    {
+      "id": "ParamMouthOpenY",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "id": "ParamBreath",
+      "min": 0,
+      "max": 1
+    },
+    {
+      "id": "ParamHairFront",
+      "min": -1,
+      "max": 1
+    },
+    {
+      "id": "ParamHairBack",
+      "min": -1,
+      "max": 1
+    }
+  ],
+  "irisClipping": true,
+  "parameterTests": [
+    {
+      "parameter": "ParamAngleX",
+      "value": -45,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.05822775512933731,
+      "finite": true
+    },
+    {
+      "parameter": "ParamAngleX",
+      "value": 45,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.05824644677340984,
+      "finite": true
+    },
+    {
+      "parameter": "ParamAngleY",
+      "value": -30,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.021804749965667725,
+      "finite": true
+    },
+    {
+      "parameter": "ParamAngleY",
+      "value": 30,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.018793989904224873,
+      "finite": true
+    },
+    {
+      "parameter": "ParamAngleZ",
+      "value": -30,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.3059968128800392,
+      "finite": true
+    },
+    {
+      "parameter": "ParamAngleZ",
+      "value": 30,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.2993860114365816,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBodyAngleX",
+      "value": -10,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshTopwear",
+        "ArtMeshNeck",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.016008119098842144,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBodyAngleX",
+      "value": 10,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshTopwear",
+        "ArtMeshNeck",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.016008428297936916,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBodyAngleY",
+      "value": -10,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshTopwear",
+        "ArtMeshNeck",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.0018732547760009766,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBodyAngleY",
+      "value": 10,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshTopwear",
+        "ArtMeshNeck",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.0018732547760009766,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBodyAngleZ",
+      "value": -10,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshTopwear",
+        "ArtMeshNeck",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.005765012465417385,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBodyAngleZ",
+      "value": 10,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshTopwear",
+        "ArtMeshNeck",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.005765048786997795,
+      "finite": true
+    },
+    {
+      "parameter": "ParamEyeLOpen",
+      "value": 0,
+      "changed": [
+        "ArtMeshEyelashL",
+        "ArtMeshEyewhiteL"
+      ],
+      "maxDelta": 0.025454893708229065,
+      "finite": true
+    },
+    {
+      "parameter": "ParamEyeLOpen",
+      "value": 1,
+      "changed": [],
+      "maxDelta": 0,
+      "finite": true
+    },
+    {
+      "parameter": "ParamEyeROpen",
+      "value": 0,
+      "changed": [
+        "ArtMeshEyelashR",
+        "ArtMeshEyewhiteR"
+      ],
+      "maxDelta": 0.024778008460998535,
+      "finite": true
+    },
+    {
+      "parameter": "ParamEyeROpen",
+      "value": 1,
+      "changed": [],
+      "maxDelta": 0,
+      "finite": true
+    },
+    {
+      "parameter": "ParamEyeBallX",
+      "value": -1,
+      "changed": [
+        "ArtMeshIridesL",
+        "ArtMeshIridesR"
+      ],
+      "maxDelta": 0.007341660559177399,
+      "finite": true
+    },
+    {
+      "parameter": "ParamEyeBallX",
+      "value": 1,
+      "changed": [
+        "ArtMeshIridesL",
+        "ArtMeshIridesR"
+      ],
+      "maxDelta": 0.007341668009757996,
+      "finite": true
+    },
+    {
+      "parameter": "ParamEyeBallY",
+      "value": -1,
+      "changed": [
+        "ArtMeshIridesL",
+        "ArtMeshIridesR"
+      ],
+      "maxDelta": 0.0031589120626449585,
+      "finite": true
+    },
+    {
+      "parameter": "ParamEyeBallY",
+      "value": 1,
+      "changed": [
+        "ArtMeshIridesL",
+        "ArtMeshIridesR"
+      ],
+      "maxDelta": 0.0031589269638061523,
+      "finite": true
+    },
+    {
+      "parameter": "ParamEyeBallForm",
+      "value": -1,
+      "changed": [
+        "ArtMeshIridesL",
+        "ArtMeshIridesR"
+      ],
+      "maxDelta": 0.0014253109693527222,
+      "finite": true
+    },
+    {
+      "parameter": "ParamEyeBallForm",
+      "value": 1,
+      "changed": [
+        "ArtMeshIridesL",
+        "ArtMeshIridesR"
+      ],
+      "maxDelta": 0.0014241933822631836,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBrowLY",
+      "value": -1,
+      "changed": [
+        "ArtMeshEyebrowL"
+      ],
+      "maxDelta": 0.003636598587036133,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBrowLY",
+      "value": 1,
+      "changed": [
+        "ArtMeshEyebrowL"
+      ],
+      "maxDelta": 0.003636583685874939,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBrowRY",
+      "value": -1,
+      "changed": [
+        "ArtMeshEyebrowR"
+      ],
+      "maxDelta": 0.003342732787132263,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBrowRY",
+      "value": 1,
+      "changed": [
+        "ArtMeshEyebrowR"
+      ],
+      "maxDelta": 0.003342732787132263,
+      "finite": true
+    },
+    {
+      "parameter": "ParamMouthForm",
+      "value": -1,
+      "changed": [
+        "ArtMeshMouth"
+      ],
+      "maxDelta": 0.003616549074649811,
+      "finite": true
+    },
+    {
+      "parameter": "ParamMouthForm",
+      "value": 1,
+      "changed": [
+        "ArtMeshMouth"
+      ],
+      "maxDelta": 0.0036262348294258118,
+      "finite": true
+    },
+    {
+      "parameter": "ParamMouthOpenY",
+      "value": 0,
+      "changed": [],
+      "maxDelta": 0,
+      "finite": true
+    },
+    {
+      "parameter": "ParamMouthOpenY",
+      "value": 1,
+      "changed": [
+        "ArtMeshMouthClose",
+        "ArtMeshMouth"
+      ],
+      "maxDelta": 0.018563847057521343,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBreath",
+      "value": 0,
+      "changed": [],
+      "maxDelta": 0,
+      "finite": true
+    },
+    {
+      "parameter": "ParamBreath",
+      "value": 1,
+      "changed": [
+        "ArtMeshFrontHair",
+        "ArtMeshEyewear",
+        "ArtMeshMouthClose",
+        "ArtMeshMouth",
+        "ArtMeshNoseR",
+        "ArtMeshNoseL",
+        "ArtMeshEyebrowR",
+        "ArtMeshEyebrowL",
+        "ArtMeshEyelashL",
+        "ArtMeshFaceDetailL",
+        "ArtMeshIridesL",
+        "ArtMeshEyewhiteL",
+        "ArtMeshEyelashR",
+        "ArtMeshFaceDetailR",
+        "ArtMeshIridesR",
+        "ArtMeshEyewhiteR",
+        "ArtMeshFace",
+        "ArtMeshEarsR",
+        "ArtMeshEarsL",
+        "ArtMeshTopwear",
+        "ArtMeshNeck",
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.0030873885843902826,
+      "finite": true
+    },
+    {
+      "parameter": "ParamHairFront",
+      "value": -1,
+      "changed": [
+        "ArtMeshFrontHair"
+      ],
+      "maxDelta": 0.050693899393081665,
+      "finite": true
+    },
+    {
+      "parameter": "ParamHairFront",
+      "value": 1,
+      "changed": [
+        "ArtMeshFrontHair"
+      ],
+      "maxDelta": 0.050481557846069336,
+      "finite": true
+    },
+    {
+      "parameter": "ParamHairBack",
+      "value": -1,
+      "changed": [
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.03437148779630661,
+      "finite": true
+    },
+    {
+      "parameter": "ParamHairBack",
+      "value": 1,
+      "changed": [
+        "ArtMeshBackHair"
+      ],
+      "maxDelta": 0.03422757238149643,
+      "finite": true
+    }
+  ],
+  "mouthCloseHidden": true,
+  "physics": [
+    {
+      "part": "front",
+      "min": -0.2597965598106384,
+      "max": 0.2462676465511322
+    },
+    {
+      "part": "back",
+      "min": -0.37044692039489746,
+      "max": 0.37139323353767395
+    }
+  ],
+  "visualPoses": [
+    "neutral",
+    "blink",
+    "mouth",
+    "left",
+    "right",
+    "up",
+    "down",
+    "tilt",
+    "gaze"
+  ],
+  "pass": true
+}

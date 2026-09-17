@@ -1,0 +1,40 @@
+  4% Reading PSD
+
+ 18% Semantic classification and left-right splitting
+
+ 96% Generating texture atlas
+
+ 38% Generating texture atlas
+
+ 58% Generating parameters and keyforms
+
+ 77% Exporting MOC3 file family
+
+ 91% Exporting CMO3 project
+
+100% Validation complete
+
+Exported: 11
+
+Duplicate layer names detected: eyewhite, irides, facedetail, eyelash; stable layer IDs were used to distinguish them.
+
+Generated Model: ArtMeshMouthClose neutral pose has notable deviation from PSD; expected=Bounds(left=569.0, top=631.0, right=709.0, bottom=691.0), actual=Bounds(left=570.27075, top=637.7844, right=708.33405, bottom=683.45844)
+
+Generated Model: ArtMeshNoseR neutral pose has notable deviation from PSD; expected=Bounds(left=597.0, top=462.0, right=643.0, bottom=594.0), actual=Bounds(left=599.08984, top=463.24786, right=639.25696, bottom=593.3174)
+
+Generated Model: ArtMeshNoseL neutral pose deviates from PSD; expected=Bounds(left=646.0, top=536.0, right=667.0, bottom=579.0), actual=Bounds(left=650.7491, top=572.42773, right=665.65405, bottom=578.5441)
+
+MOC3 Readback: ArtMeshNoseL neutral pose deviates from PSD; expected=Bounds(left=646.0, top=536.0, right=667.0, bottom=579.0), actual=Bounds(left=650.7493, top=572.4273, right=665.6551, bottom=578.5424)
+
+MOC3 Readback: ArtMeshNoseR neutral pose has notable deviation from PSD; expected=Bounds(left=597.0, top=462.0, right=643.0, bottom=594.0), actual=Bounds(left=599.09, top=463.25003, right=639.2573, bottom=593.3234)
+
+MOC3 Readback: ArtMeshMouthClose neutral pose has notable deviation from PSD; expected=Bounds(left=569.0, top=631.0, right=709.0, bottom=691.0), actual=Bounds(left=570.27057, top=637.7832, right=708.3318, bottom=683.4565)
+
+CMO3: Original PSD source edit chain not retained; editable layers rebuilt from 1 texture pages (model/rig intact)
+
+CMO3 Readback: ArtMeshNoseL neutral pose deviates from PSD; expected=Bounds(left=646.0, top=536.0, right=667.0, bottom=579.0), actual=Bounds(left=650.7493, top=572.4273, right=665.6551, bottom=578.5424)
+
+CMO3 Readback: ArtMeshNoseR neutral pose has notable deviation from PSD; expected=Bounds(left=597.0, top=462.0, right=643.0, bottom=594.0), actual=Bounds(left=599.09, top=463.25003, right=639.2573, bottom=593.3234)
+
+CMO3 Readback: ArtMeshMouthClose neutral pose has notable deviation from PSD; expected=Bounds(left=569.0, top=631.0, right=709.0, bottom=691.0), actual=Bounds(left=570.27057, top=637.7832, right=708.3318, bottom=683.4565)
+

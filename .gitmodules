@@ -1,0 +1,6 @@
+[submodule "vendor/psd2live"]
+	path = vendor/psd2live
+	url = https://github.com/tsunehimatoi/psd2live.git
+[submodule "vendor/see-through"]
+	path = vendor/see-through
+	url = https://github.com/shitagaki-lab/see-through.git

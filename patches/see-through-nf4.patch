@@ -1,0 +1,103 @@
+diff --git a/inference/scripts/inference_psd_quantized.py b/inference/scripts/inference_psd_quantized.py
+index 36c586a..d476129 100644
+--- a/inference/scripts/inference_psd_quantized.py
++++ b/inference/scripts/inference_psd_quantized.py
+@@ -44,17 +44,34 @@ VALID_BODY_PARTS_V2 = [
+ ]
+ 
+ 
++def sync_quant_state(module, inputs):
++    # Diffusers group onload moves param.data, not BitsAndBytes' auxiliary quantization tensors.
++    state = getattr(getattr(module, 'weight', None), 'quant_state', None)
++    if state is not None:
++        state.to(inputs[0].device)
++
++
++def enable_quant_group_offload(pipeline):
++    pipeline.enable_group_offload('cuda', num_blocks_per_group=1)
++    for component in pipeline.components.values():
++        if isinstance(component, torch.nn.Module):
++            for module in component.modules():
++                if getattr(getattr(module, 'weight', None), 'quant_state', None) is not None:
++                    module.register_forward_pre_hook(sync_quant_state)
++
++
+ def build_layerdiff_pipeline(args):
+     """Build the LayerDiff3D pipeline with appropriate quantization."""
+     quant_mode = args.quant_mode
++    print("CUDA warmup", (torch.ones(16,16,device="cuda") @ torch.ones(16,16,device="cuda")).sum().item(),flush=True)
+ 
+     if quant_mode == 'none':
+         # bf16 baseline: load from original repo
+         repo = args.repo_id_layerdiff
+-        trans_vae = TransparentVAE.from_pretrained(repo, subfolder='trans_vae')
+-        unet = UNetFrameConditionModel.from_pretrained(repo, subfolder='unet')
++        trans_vae = TransparentVAE.from_pretrained(repo, subfolder='trans_vae', torch_dtype=torch.bfloat16)
++        unet = UNetFrameConditionModel.from_pretrained(repo, subfolder='unet', torch_dtype=torch.bfloat16)
+         pipeline = KDiffusionStableDiffusionXLPipeline.from_pretrained(
+-            repo, trans_vae=trans_vae, unet=unet, scheduler=None)
++            repo, trans_vae=trans_vae, unet=unet, scheduler=None, torch_dtype=torch.bfloat16)
+         if args.cpu_offload:
+             pipeline.vae.to(dtype=torch.bfloat16)
+             pipeline.trans_vae.to(dtype=torch.bfloat16)
+@@ -69,17 +86,18 @@ def build_layerdiff_pipeline(args):
+             pipeline.text_encoder.to(dtype=torch.bfloat16, device='cuda')
+             pipeline.text_encoder_2.to(dtype=torch.bfloat16, device='cuda')
+             if getattr(args, 'group_offload', False):
+-                pipeline.enable_group_offload('cuda', num_blocks_per_group=1)
++                enable_quant_group_offload(pipeline)
+         # Cache tag embeddings and unload text encoders to save VRAM
++        print("Before tag cache", torch.cuda.mem_get_info(), "allocated",torch.cuda.memory_allocated(),"reserved",torch.cuda.memory_reserved(),flush=True)
+         pipeline.cache_tag_embeds()
+     else:
+         # NF4: load from pre-quantized repo (auto-selected by REPO_MAP)
+         repo = args.repo_id_layerdiff
+-        unet = UNetFrameConditionModel.from_pretrained(repo, subfolder='unet')
++        unet = UNetFrameConditionModel.from_pretrained(repo, subfolder='unet', torch_dtype=torch.bfloat16)
+ 
+-        trans_vae = TransparentVAE.from_pretrained(repo, subfolder='trans_vae')  # always bf16
++        trans_vae = TransparentVAE.from_pretrained(repo, subfolder='trans_vae', torch_dtype=torch.bfloat16)  # always bf16
+         pipeline = KDiffusionStableDiffusionXLPipeline.from_pretrained(
+-            repo, trans_vae=trans_vae, unet=unet, scheduler=None)
++            repo, trans_vae=trans_vae, unet=unet, scheduler=None, torch_dtype=torch.bfloat16)
+ 
+         if args.cpu_offload:
+             # VAE + TransparentVAE to bf16; quantized components handled by bnb
+@@ -91,8 +109,9 @@ def build_layerdiff_pipeline(args):
+             pipeline.trans_vae.to(dtype=torch.bfloat16, device='cuda')
+             # Don't manually .to(cuda) quantized components -- bnb handles device placement
+             if getattr(args, 'group_offload', False):
+-                pipeline.enable_group_offload('cuda', num_blocks_per_group=1)
++                enable_quant_group_offload(pipeline)
+         # Cache tag embeddings and unload text encoders to save VRAM
++        print("Before tag cache", torch.cuda.mem_get_info(), "allocated",torch.cuda.memory_allocated(),"reserved",torch.cuda.memory_reserved(),flush=True)
+         pipeline.cache_tag_embeds()
+ 
+     return pipeline
+@@ -104,7 +123,7 @@ def build_marigold_pipeline(args):
+ 
+     if quant_mode == 'none':
+         repo = args.repo_id_depth
+-        unet = UNetFrameConditionModel.from_pretrained(repo, subfolder='unet')
++        unet = UNetFrameConditionModel.from_pretrained(repo, subfolder='unet', torch_dtype=torch.bfloat16)
+         marigold_pipe = MarigoldDepthPipeline.from_pretrained(repo, unet=unet)
+         if args.cpu_offload:
+             marigold_pipe.to(dtype=torch.bfloat16)
+@@ -112,7 +131,7 @@ def build_marigold_pipeline(args):
+         else:
+             marigold_pipe.to(device='cuda', dtype=torch.bfloat16)
+             if getattr(args, 'group_offload', False):
+-                marigold_pipe.enable_group_offload('cuda', num_blocks_per_group=1)
++                enable_quant_group_offload(marigold_pipe)
+         marigold_pipe.cache_tag_embeds()
+     else:
+         # NF4: load from pre-quantized repo (auto-selected by REPO_MAP)
+@@ -127,7 +146,7 @@ def build_marigold_pipeline(args):
+            not getattr(marigold_pipe.text_encoder, 'quantization_method', None):
+             marigold_pipe.text_encoder.to(device='cuda')
+         if getattr(args, 'group_offload', False):
+-            marigold_pipe.enable_group_offload('cuda', num_blocks_per_group=1)
++            enable_quant_group_offload(marigold_pipe)
+         marigold_pipe.cache_tag_embeds()
+ 
+     return marigold_pipe
