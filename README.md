@@ -50,7 +50,9 @@ A monochrome portrait brought to life — model, editable sources, tools, and a 
 2. 将解压后的整个 `models/InkPortrait` 文件夹放入 VTube Studio 的模型目录，保留所有相对路径。
 3. 加载模型并配置跟踪输入。建议歪头输出范围先设为 **−12°～12°**。
 
-需要完整制作资料时，下载同一 Release 的 **InkPortrait-Production-v6.zip**：包含本仓库文件及两个固定版本工具的实际源码，无需再取子模块。最终模型包仅供直接导入；历史包仅作对照。
+需要完整制作资料时，下载同一 Release 的 **InkPortrait-Production-v6.zip.001～006** 六个分片：包含本仓库文件及两个固定版本工具的实际源码，无需再取子模块。最终模型包仅供直接导入；历史包仅作对照。
+
+因大文件上传接口失败，制作 ZIP 以六个分片提供（内容未删减）。将六个分片、`SHA256SUMS.txt` 和附件 `join_release.py` 下载到同一目录，使用 Python 3.11+ 运行 `python join_release.py`，校验并合并成 `InkPortrait-Production-v6.zip` 后正常解压。也可使用仓库的 [合并工具](tools/join_release.py)：`python tools/join_release.py <下载目录>`。
 
 也可以直接使用 [最终模型目录](models/InkPortrait)。网页预览的歪头限幅仅属于播放器逻辑，不会自动成为 VTube Studio 的参数限制。**未进行 VTube Studio 摄像头实测**；详见 [使用说明](docs/USAGE.md)。
 
