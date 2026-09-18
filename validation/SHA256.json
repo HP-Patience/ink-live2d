@@ -181,5 +181,13 @@
   "validation/v5/runtime.json": "5a937d2d3735a5287431806f20b79ba4026d7819a14c3ab958950d6eda7e319f",
   "validation/v6/export-manifest.json": "73233cdcdfb92f1c6d650b95284d4f17620499b08dce57050862eb4a1a502955",
   "validation/v6/export.log": "6412004ca5075c135416563eb16fefd2962f928ec027f7e055c923d9da86a84b",
-  "validation/v6/runtime.json": "b3d2bb37bfd824dc5329f790ad86f1c5e1f61ad6ca4bc391605bf5fef7123475"
+  "validation/v6/runtime.json": "b3d2bb37bfd824dc5329f790ad86f1c5e1f61ad6ca4bc391605bf5fef7123475",
+  "source/portrait-variants/2.\u65e0\u773c\u955c-\u65e0\u9ed1\u773c\u5708-\u51cc\u4e71\u5fae\u5206.png": "0d984338f8ab2166697f5e751e63b879711bd6b93def43f6a67a7316de6fa10c",
+  "source/portrait-variants/\u9ed1\u773c\u5708-\u773c\u955c-\u80cc\u5934.png": "44105400b5bed885d68bae029522475a6160a54405b862b96f96095d38500fc2",
+  "source/portrait-variants/\u65e0\u9ed1\u773c\u5708-\u773c\u955c-\u80cc\u5934.png": "edb6f63c619ad2669db31d8232aeedcb2cbaa2a4061a7fb9c6c2be1641b86a86",
+  "source/portrait-variants/\u65e0\u9ed1\u773c\u5708-\u773c\u955c-\u4e09\u4e03\u4fa7\u80cc.png": "8bf702d4cefb6e48fbb99143cd35a671fc206c42799c5db022775ef6e926ea66",
+  "source/portrait-variants/\u9ed1\u773c\u5708-\u773c\u955c-\u4e09\u4e03\u4fa7\u80cc.png": "e8c43746389d3e3ad9170629b8d0ebab7864672f9877c0aaba49308198afca51",
+  "source/portrait-variants/1.\u65e0\u773c\u955c-\u9ed1\u773c\u5708-\u51cc\u4e71\u5fae\u5206.png": "f66599bfd9d6fd9d5be4f9f23fc191a2564fd4b33429d2d258e026ced16a6e66",
+  "source/portrait-variants/\u9ed1\u773c\u5708-\u773c\u955c-\u51cc\u4e71\u5fae\u5206.png": "afc4c0c7f7979bebc785c7a19a17e297c6ac5d8f0845260c06f72aeb8abc1e45",
+  "source/portrait-variants/\u65e0\u9ed1\u773c\u5708-\u773c\u955c-\u51cc\u4e71\u5fae\u5206.png": "b4494777f6d179796ac862edf217dd546d06d736704d57082edf7c3c318f6a60"
 }
