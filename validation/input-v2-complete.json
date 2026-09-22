@@ -1,0 +1,11 @@
+{
+  "physical_key_resources": 114,
+  "actual_key_input_verified": true,
+  "actual_mouse_travel_pixels": [
+    41.6991911004087,
+    15.468235294117676
+  ],
+  "installed": "Ruotengwu",
+  "installation_record": "input-v2-install/installation.json",
+  "limits": "Most recent key wins; releasing it returns to rest (stock BongoCat 1.11.0)"
+}

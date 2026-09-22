@@ -1,0 +1,56 @@
+{
+  "key-left": {
+    "changed_pixels": 491,
+    "bounds": [
+      211,
+      239,
+      277,
+      281
+    ]
+  },
+  "key-tab-left": {
+    "changed_pixels": 491,
+    "bounds": [
+      211,
+      239,
+      277,
+      281
+    ]
+  },
+  "mouse-left": {
+    "changed_pixels": 481,
+    "bounds": [
+      77,
+      234,
+      139,
+      296
+    ]
+  },
+  "mouse-right": {
+    "changed_pixels": 481,
+    "bounds": [
+      77,
+      234,
+      139,
+      296
+    ]
+  },
+  "mouse-move": {
+    "changed_pixels": 13470,
+    "bounds": [
+      44,
+      29,
+      309,
+      296
+    ]
+  },
+  "idle_blink": {
+    "run": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720",
+    "frames": [
+      "019.png",
+      "020.png",
+      "021.png"
+    ],
+    "inspection": "Eyes visibly close in frame 020 and reopen in 021; glasses remain in place."
+  }
+}

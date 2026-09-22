@@ -1,0 +1,6 @@
+{
+  "status": "verified existing completed output",
+  "psd": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\workspace\\inference-output\\inference-input.psd",
+  "layers": 18,
+  "note": "Depth and PSD generation succeeded; runner had tested the wrong output directory. Fixed output assertion, no GPU rerun required."
+}
