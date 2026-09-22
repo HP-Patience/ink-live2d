@@ -53,17 +53,18 @@ front=clean('front hair',(140,90,1145,829),200)
 f=np.array(front);dark=(rgba[:,:,:3].max(axis=2)<110)&(rgba[:,:,3]>200)&(f[:,:,3]>200)
 f[dark,:3]=rgba[dark,:3];add('front hair',Image.fromarray(f))
 add('eyewear',clean('eyewear',(392,650,930,793),90))
-for name in ['mouse','hand mouse','hand keyboard']:
+for name in ['mouse','mouse-blue-left','mouse-blue-right','hand mouse','hand keyboard']:
     add(name,Image.open(ROOT/'source/input-parts'/(name+'.png')).convert('RGBA'))
 canvas=Image.new('RGBA',(S,S))
-for name,im in layers:canvas.alpha_composite(im)
+for name,im in layers:
+    if not name.startswith('mouse-blue-'):canvas.alpha_composite(im)
 canvas.save(ROOT/'source/neutral-composite.png')
 psd=PSDImage.new('RGBA',(S,S))
 for name,im in layers:
     box=im.getbbox();PixelLayer.frompil(im.crop(box),psd,name=name,top=box[1],left=box[0])
 psd.save(ROOT/'source/Ruotengwu.psd')
 # Check actual PSD raster composite rather than assuming append semantics.
-composite=psd.composite(force=True).convert('RGBA')
+composite=psd.composite(force=True,layer_filter=lambda l:not l.name.startswith('mouse-blue-')).convert('RGBA')
 composite.save(ROOT/'validation/psd-composite.png')
 a=np.array(composite).astype(float);b=np.array(canvas).astype(float)
 assert np.abs(a[:,:,3]-b[:,:,3]).mean()<2,'PSD alpha diverged'

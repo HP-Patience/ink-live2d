@@ -6,7 +6,7 @@ import java.util.*;
 
 /** Reuses PSD2Live's authoring/export API; no custom MOC3 encoder. */
 class BuildRuotengwu {
-  static final Set<String> INPUTS=Set.of("desktop","mouse","hand mouse","hand keyboard");
+  static final Set<String> INPUTS=Set.of("desktop","mouse","mouse-blue-left","mouse-blue-right","hand mouse","hand keyboard");
   static String id(Object o) throws Exception {
     if(o instanceof org.umamo.format.art.SourceLayer) return (String)org.umamo.format.art.SourceLayer.class.getMethod("getId-VrS5uwI").invoke(o);
     for(var m:o.getClass().getMethods())
@@ -76,7 +76,23 @@ class BuildRuotengwu {
       String name=mesh.getName();if(!INPUTS.contains(name)||name.equals("desktop"))continue;
       float[] pos=mesh.getMesh().getPositions();if(pos.length<6)throw new AssertionError("Empty input mesh");
       boolean keyboard=name.equals("hand keyboard"),hand=name.startsWith("hand ");
-      if(keyboard) {
+      if(name.startsWith("mouse-blue-")) {
+        String button=name.endsWith("left")?"ParamMouseLeftDown":"ParamMouseRightDown";
+        for(float x:new float[]{-30,0,30})for(float y:new float[]{-30,0,30})
+        for(float down:new float[]{0,1}) {
+          var delta=new ArrayList<Float>();
+          for(int i=0;i<pos.length;i+=2) {
+            float canvasY=frame.getTop()+pos[i+1]*frame.getHeight();
+            float w=smooth((canvasY-830f)/155f);
+            delta.add((-x*3.0f)*w/frame.getWidth());
+            delta.add((y*1.20f)*w/frame.getHeight());
+          }
+          edits=edits.setKeyform(new RigKeyformSetEdit(new RigTargetRef(RigTargetKind.ART_MESH,id(mesh),null),
+            Map.of("ParamMouseX",x,"ParamMouseY",y,button,down),
+            new RigKeyformGeometryEdit(null,null,null,null,null,delta),
+            new RigKeyformChannelsEdit(down,null,null,null,null,null,null)));
+        }
+      } else if(keyboard) {
         for(float down:new float[]{0,1}) {
           var delta=new ArrayList<Float>();
           for(int i=0;i<pos.length;i+=2) {
@@ -108,9 +124,15 @@ class BuildRuotengwu {
           edits=meshKey(edits,id(mesh),Map.of("ParamMouseX",x,"ParamMouseY",y,"ParamMouseLeftDown",left,"ParamMouseRightDown",right),delta);
         }
       }
+      if(name.startsWith("mouse-blue-")) {
+        String button=name.endsWith("left")?"ParamMouseLeftDown":"ParamMouseRightDown";
+        for(float down:new float[]{0,1})
+          edits=edits.setKeyform(new RigKeyformSetEdit(new RigTargetRef(RigTargetKind.ART_MESH,id(mesh),null),
+            Map.of(button,down),null,new RigKeyformChannelsEdit(down,null,null,null,null,null,null)));
+      }
       driven++;System.out.println("DRIVEN "+name+" "+id(mesh)+" vertices="+pos.length/2);
     }
-    if(driven!=3)throw new AssertionError("Must rig both hands and mouse, got "+driven);
+    if(driven!=5)throw new AssertionError("Must rig both hands, mouse and two blue button layers, got "+driven);
     var result=pipeline.run(Path.of(args[0]),Path.of(args[1]),config(tags,parents,edits),
       (stage,fraction)->System.out.printf("%3.0f%% %s%n",fraction*100,stage));
     System.out.println("Exported "+result.getExportedFiles().size()+" files");

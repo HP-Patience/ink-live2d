@@ -90,7 +90,7 @@ for name,item in list(keys.items()):
     wrist=M@np.r_[palm_wrist,1.]
     overlay=Image.new('RGBA',(S*scale,S*scale));od=ImageDraw.Draw(overlay)
     corners=[project(x0,y0),project(x1,y0),project(x1,y1),project(x0,y1)]
-    od.polygon([(round(x*scale),round(y*scale)) for x,y in corners],fill=(237,234,224,255),outline=(62,61,66,255),width=2*scale)
+    # Keycap color is now drawn independently by the held-key highlight renderer.
     # Bend the sleeve, not the palm. The cubic ends vertically at the cuff so
     # the wrist joins without a kink; rounded shoulders replace the old rigid bar.
     c1=shoulder+np.array([0.,55.])

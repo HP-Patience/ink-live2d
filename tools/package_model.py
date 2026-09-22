@@ -36,6 +36,7 @@ for key in canonical:
 Image.open(ROOT/'source/neutral-composite.png').save(out/'resources/cover.png')
 Image.new('RGBA',(1280,1280),(0,0,0,0)).save(out/'resources/background.png')
 shutil.copy2(ROOT/'source/key-layout.json',out/'key-layout.json')
+shutil.copy2(ROOT/'source/key-highlights.json',out/'key-highlights.json')
 readme='''# 若腾武 / Ruotengwu Live2D 桌宠
 
 将本文件夹或 ZIP 导入 BongoCat 1.11.0，选择 Ruotengwu。也可以把整个 Ruotengwu 文件夹放到用户模型目录，再重新扫描模型。

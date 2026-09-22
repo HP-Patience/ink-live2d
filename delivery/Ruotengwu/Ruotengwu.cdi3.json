@@ -204,6 +204,14 @@
 		},
 		{
 			"Id": "ArtMeshObjects3",
+			"Name": "mouse-blue-right"
+		},
+		{
+			"Id": "ArtMeshObjects4",
+			"Name": "mouse-blue-left"
+		},
+		{
+			"Id": "ArtMeshObjects5",
 			"Name": "mouse"
 		},
 		{
@@ -279,7 +287,7 @@
 			"Name": "back hair-l"
 		},
 		{
-			"Id": "ArtMeshObjects4",
+			"Id": "ArtMeshObjects6",
 			"Name": "desktop"
 		}
 	]
