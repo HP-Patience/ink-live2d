@@ -5,10 +5,11 @@ The test model/storage are isolated; restore pointer/focus and release owned key
 from pathlib import Path
 import ctypes as C
 from ctypes import wintypes as W
-import os,json,shutil,subprocess,time,hashlib
+import os,json,shutil,subprocess,time,hashlib,argparse
 import numpy as np,cv2
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser();parser.add_argument("--app",default=r"C:\Users\wjx\AppData\Local\Programs\BongoCat\BongoCat.exe");args_cli=parser.parse_args()
 U=C.WinDLL('user32',use_last_error=True);K=C.WinDLL('kernel32',use_last_error=True)
 class MOUSEINPUT(C.Structure): _fields_=[('dx',W.LONG),('dy',W.LONG),('mouseData',W.DWORD),('dwFlags',W.DWORD),('time',W.DWORD),('dwExtraInfo',C.c_size_t)]
 class KEYBDINPUT(C.Structure): _fields_=[('wVk',W.WORD),('wScan',W.WORD),('dwFlags',W.DWORD),('time',W.DWORD),('dwExtraInfo',C.c_size_t)]
@@ -26,11 +27,12 @@ U.PostMessageW.argtypes=[W.HWND,W.UINT,W.WPARAM,W.LPARAM];U.PeekMessageW.argtype
 oldfocus=U.GetForegroundWindow();oldpoint=W.POINT();U.GetCursorPos(C.byref(oldpoint))
 run=ROOT/'validation/input-position-native'/time.strftime('%Y%m%d-%H%M%S');run.mkdir(parents=True);store=run/'storage';(store/'models').mkdir(parents=True);(run/'empty').mkdir()
 model=ROOT/'delivery/Ruotengwu'
+shutil.copytree(model,store/'models/Ruotengwu')
 (store/'config').mkdir();(store/'config/settings.json').write_text(json.dumps({'format':'bongocat/settings','schemaVersion':1,'window':{'clickThrough':True,'alwaysOnTop':False},'rendering':{'centerPointerTracking':False}}))
 layout=json.loads((ROOT/'source/key-layout.json').read_text());frames=run/'frames';frames.mkdir();held=set();sink=None;proc=None
 info=subprocess.STARTUPINFO();info.dwFlags|=subprocess.STARTF_USESHOWWINDOW;info.wShowWindow=0
 env=os.environ.copy();env['BONGO_CAT_TEST_INSTANCE_ID']='keys-'+str(os.getpid())
-args=[r'C:\Users\wjx\AppData\Local\Programs\BongoCat\BongoCat.exe','--ci-smoke','--ci-exit-ms=35000',f'--storage-root={store}',f'--nearby-root={run/"empty"}',f'--ci-import={model}','--ci-live2d-scenario=idle']
+args=[args_cli.app,'--ci-smoke','--ci-exit-ms=35000',f'--storage-root={store}',f'--nearby-root={run/"empty"}',f'--ci-model=Ruotengwu','--ci-live2d-scenario=idle']
 log=(run/'runtime.log').open('w');out=(run/'stdout.log').open('w')
 def pump(seconds):
     end=time.monotonic()+seconds;msg=W.MSG()
@@ -129,3 +131,5 @@ board=Image.new('RGB',(1440,960),(234,237,242));draw=ImageDraw.Draw(board)
 for i,name in enumerate(['KeyA','KeyD','KeyJ','KeyP','Space','Return','ShiftLeft','ShiftRight','UpArrow']):
     im=Image.open(frames/(name+'.png')).convert('RGBA');im.thumbnail((450,300));x=i%3*480;y=i//3*320+18;board.paste(im,(x,y),im);draw.text((x+10,y-15),name,fill='black')
 board.save(run/'native-key-contact.png')
+
+

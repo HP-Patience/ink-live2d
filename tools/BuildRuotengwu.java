@@ -76,23 +76,7 @@ class BuildRuotengwu {
       String name=mesh.getName();if(!INPUTS.contains(name)||name.equals("desktop"))continue;
       float[] pos=mesh.getMesh().getPositions();if(pos.length<6)throw new AssertionError("Empty input mesh");
       boolean keyboard=name.equals("hand keyboard"),hand=name.startsWith("hand ");
-      if(name.startsWith("mouse-blue-")) {
-        String button=name.endsWith("left")?"ParamMouseLeftDown":"ParamMouseRightDown";
-        for(float x:new float[]{-30,0,30})for(float y:new float[]{-30,0,30})
-        for(float down:new float[]{0,1}) {
-          var delta=new ArrayList<Float>();
-          for(int i=0;i<pos.length;i+=2) {
-            float canvasY=frame.getTop()+pos[i+1]*frame.getHeight();
-            float w=smooth((canvasY-830f)/155f);
-            delta.add((-x*3.0f)*w/frame.getWidth());
-            delta.add((y*1.20f)*w/frame.getHeight());
-          }
-          edits=edits.setKeyform(new RigKeyformSetEdit(new RigTargetRef(RigTargetKind.ART_MESH,id(mesh),null),
-            Map.of("ParamMouseX",x,"ParamMouseY",y,button,down),
-            new RigKeyformGeometryEdit(null,null,null,null,null,delta),
-            new RigKeyformChannelsEdit(down,null,null,null,null,null,null)));
-        }
-      } else if(keyboard) {
+      if(keyboard) {
         for(float down:new float[]{0,1}) {
           var delta=new ArrayList<Float>();
           for(int i=0;i<pos.length;i+=2) {

@@ -86,7 +86,9 @@ for name,item in list(keys.items()):
     x0,y0,x1,y1=item['rect'];hit=np.array(project((x0+x1)/2,(y0+y1)/2))
     # Move the hand across keys without rotating its wrist/fingers sideways.
     angle=0.0
-    M=cv2.getRotationMatrix2D(tuple(palm_anchor),angle,.82);M[:,2]+=hit-palm_anchor
+    # Land the fingertips at the key's far edge so the cap stays visible;
+    # do not paint blue on skin or spill the tint onto neighboring keys.
+    M=cv2.getRotationMatrix2D(tuple(palm_anchor),angle,.82);M[:,2]+=hit-palm_anchor+np.array([0.,-18.])
     wrist=M@np.r_[palm_wrist,1.]
     overlay=Image.new('RGBA',(S*scale,S*scale));od=ImageDraw.Draw(overlay)
     corners=[project(x0,y0),project(x1,y0),project(x1,y1),project(x0,y1)]
