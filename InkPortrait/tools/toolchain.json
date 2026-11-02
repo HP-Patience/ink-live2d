@@ -1,0 +1,20 @@
+{
+  "psd2live": {
+    "version": "0.7.1",
+    "commit": "959d643bcf6c43440e13e231837d4c15d3dcde02",
+    "archive": "https://github.com/tsunehimatoi/psd2live/releases/download/v0.7.1/PSD2Live-0.7.1-portable.zip",
+    "sha256": "245744333c116169774365d8e64d0cf908a4b97ccffd1386f781d9c0c96fab4f",
+    "tag": "v0.7.1"
+  },
+  "see_through": {
+    "commit": "7f139bb25c46a0c8ac720d95ddab185fcda5451c",
+    "models": [
+      "24yearsold/seethroughv0.0.2_layerdiff3d_nf4",
+      "24yearsold/seethroughv0.0.1_marigold_nf4"
+    ]
+  },
+  "cubism_sdk": "CubismSdkForWeb-5-r.5",
+  "java": "21",
+  "python": "3.12",
+  "runtime": "WebGL2"
+}

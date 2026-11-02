@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "drawables": 23,
+  "parameters": 18,
+  "parameterExtremesTested": 36,
+  "mouthCloseHidden": true,
+  "physics": [
+    {
+      "part": "front",
+      "min": -0.12181273102760315,
+      "max": 0.13932004570960999
+    },
+    {
+      "part": "back",
+      "min": -0.21873542666435242,
+      "max": 0.40992599725723267
+    }
+  ]
+}

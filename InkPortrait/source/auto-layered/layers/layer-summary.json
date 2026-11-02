@@ -1,0 +1,502 @@
+[
+  {
+    "name": "back hair.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 141676
+  },
+  {
+    "name": "back hair_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "bottomwear.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 28
+  },
+  {
+    "name": "bottomwear_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "ears.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 115475
+  },
+  {
+    "name": "ears_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "earwear.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 37
+  },
+  {
+    "name": "earwear_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "eyebrow.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 5382
+  },
+  {
+    "name": "eyebrow_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "eyelash.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 14833
+  },
+  {
+    "name": "eyelash_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "eyewear.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 10932
+  },
+  {
+    "name": "eyewear_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "eyewhite.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 5905
+  },
+  {
+    "name": "eyewhite_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "face.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 109065
+  },
+  {
+    "name": "face_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "footwear.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 23
+  },
+  {
+    "name": "footwear_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "front hair.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 280187
+  },
+  {
+    "name": "front hair_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "handwear.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 35
+  },
+  {
+    "name": "handwear_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "head.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 261688
+  },
+  {
+    "name": "headwear.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 37
+  },
+  {
+    "name": "headwear_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "irides.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 2704
+  },
+  {
+    "name": "irides_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "legwear.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 288034
+  },
+  {
+    "name": "legwear_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "mouth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 3236
+  },
+  {
+    "name": "mouth_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "neck.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 85513
+  },
+  {
+    "name": "neckwear.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 29
+  },
+  {
+    "name": "neckwear_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "neck_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "nose.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 3256
+  },
+  {
+    "name": "nose_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "objects.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 25
+  },
+  {
+    "name": "objects_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "reconstruction.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 521738
+  },
+  {
+    "name": "src_head.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "src_img.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "tail.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 29
+  },
+  {
+    "name": "tail_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "topwear.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 9411
+  },
+  {
+    "name": "topwear_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  },
+  {
+    "name": "wings.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 36
+  },
+  {
+    "name": "wings_depth.png",
+    "bbox": [
+      0,
+      0,
+      1280,
+      1280
+    ],
+    "alphaPixels": 1638400
+  }
+]
