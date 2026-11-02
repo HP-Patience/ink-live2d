@@ -1,7 +1,7 @@
 from pathlib import Path
 from huggingface_hub import HfApi, snapshot_download
 import json
-root=Path(r'E:\BongoCat\artifacts\ruotengwu-live2d')
+root=Path(r'E:\BongoCat\artifacts\ink-keys-live2d')
 records=[]
 for name in ('seethroughv0.0.2_layerdiff3d_nf4','seethroughv0.0.1_marigold_nf4'):
     repo='24yearsold/'+name

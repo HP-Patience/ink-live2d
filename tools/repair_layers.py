@@ -62,7 +62,7 @@ canvas.save(ROOT/'source/neutral-composite.png')
 psd=PSDImage.new('RGBA',(S,S))
 for name,im in layers:
     box=im.getbbox();PixelLayer.frompil(im.crop(box),psd,name=name,top=box[1],left=box[0])
-psd.save(ROOT/'source/Ruotengwu.psd')
+psd.save(ROOT/'source/InkKeys.psd')
 # Check actual PSD raster composite rather than assuming append semantics.
 composite=psd.composite(force=True,layer_filter=lambda l:not l.name.startswith('mouse-blue-')).convert('RGBA')
 composite.save(ROOT/'validation/psd-composite.png')

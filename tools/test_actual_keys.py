@@ -26,13 +26,13 @@ U.SendInput.argtypes=[W.UINT,C.POINTER(INPUT),C.c_int];U.SendInput.restype=W.UIN
 U.PostMessageW.argtypes=[W.HWND,W.UINT,W.WPARAM,W.LPARAM];U.PeekMessageW.argtypes=[C.POINTER(W.MSG),W.HWND,W.UINT,W.UINT,W.UINT]
 oldfocus=U.GetForegroundWindow();oldpoint=W.POINT();U.GetCursorPos(C.byref(oldpoint))
 run=ROOT/'validation/input-position-native'/time.strftime('%Y%m%d-%H%M%S');run.mkdir(parents=True);store=run/'storage';(store/'models').mkdir(parents=True);(run/'empty').mkdir()
-model=ROOT/'delivery/Ruotengwu'
-shutil.copytree(model,store/'models/Ruotengwu')
+model=ROOT/'delivery/InkKeys'
+shutil.copytree(model,store/'models/InkKeys')
 (store/'config').mkdir();(store/'config/settings.json').write_text(json.dumps({'format':'bongocat/settings','schemaVersion':1,'window':{'clickThrough':True,'alwaysOnTop':False},'rendering':{'centerPointerTracking':False}}))
 layout=json.loads((ROOT/'source/key-layout.json').read_text());frames=run/'frames';frames.mkdir();held=set();sink=None;proc=None
 info=subprocess.STARTUPINFO();info.dwFlags|=subprocess.STARTF_USESHOWWINDOW;info.wShowWindow=0
 env=os.environ.copy();env['BONGO_CAT_TEST_INSTANCE_ID']='keys-'+str(os.getpid())
-args=[args_cli.app,'--ci-smoke','--ci-exit-ms=35000',f'--storage-root={store}',f'--nearby-root={run/"empty"}',f'--ci-model=Ruotengwu','--ci-live2d-scenario=idle']
+args=[args_cli.app,'--ci-smoke','--ci-exit-ms=35000',f'--storage-root={store}',f'--nearby-root={run/"empty"}',f'--ci-model=InkKeys','--ci-live2d-scenario=idle']
 log=(run/'runtime.log').open('w');out=(run/'stdout.log').open('w')
 def pump(seconds):
     end=time.monotonic()+seconds;msg=W.MSG()
@@ -63,7 +63,7 @@ try:
     while not (store/'state/live2d-audit.txt').exists():
         assert proc.poll() is None,'BongoCat exited before loading';assert time.monotonic()-start<15,'Startup timed out';pump(.1)
     # A blank, off-screen STATIC window safely receives our synthetic keys.
-    sink=U.CreateWindowExW(0,'STATIC','Ruotengwu input regression sink',0x80000000,-1600,-1600,120,70,None,None,None,None)
+    sink=U.CreateWindowExW(0,'STATIC','InkKeys input regression sink',0x80000000,-1600,-1600,120,70,None,None,None,None)
     assert sink,'Could not create owned input sink'
     U.ShowWindow(sink,5)
     foreground_thread=U.GetWindowThreadProcessId(U.GetForegroundWindow(),None);own_thread=K.GetCurrentThreadId()

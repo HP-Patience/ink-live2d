@@ -3,8 +3,8 @@ from pathlib import Path
 import hashlib, json, shutil, zipfile
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
-export=ROOT/'workspace/export'; out=ROOT/'delivery/Ruotengwu'
-manifest=export/'Ruotengwu.model3.json'
+export=ROOT/'workspace/export'; out=ROOT/'delivery/InkKeys'
+manifest=export/'InkKeys.model3.json'
 assert manifest.is_file(), 'Export the real model before packaging'
 data=json.loads(manifest.read_text(encoding='utf-8'));refs=data['FileReferences']
 assets=[refs['Moc'],*refs['Textures'],refs['Physics'],refs['DisplayInfo']]
@@ -12,12 +12,12 @@ assets += [m['File'] for group in refs.get('Motions',{}).values() for m in group
 assets += [m['File'] for m in refs.get('Expressions',[])]
 assert (export/refs['Moc']).read_bytes()[:4]==b'MOC3', 'Refusing to package a placeholder model'
 out.mkdir(parents=True,exist_ok=True)
-for name in set(assets+['Ruotengwu.model3.json']):
+for name in set(assets+['InkKeys.model3.json']):
     src=(export/name).resolve(); dst=(out/name).resolve()
     assert src.is_relative_to(export.resolve()) and dst.is_relative_to(out.resolve()), f'Unsafe asset path: {name}'
     assert src.is_file(), f'Missing exported file: {name}'
     dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
-shutil.copy2(export/'Ruotengwu.cmo3',ROOT/'source/Ruotengwu.cmo3')
+shutil.copy2(export/'InkKeys.cmo3',ROOT/'source/InkKeys.cmo3')
 (out/'.bongo-cat-mode').write_text('standard',encoding='utf-8')
 # BongoCat chooses native overlays by the actual key name. Each contains that
 # key's highlight plus a connected typing arm; Live2D hides its resting arm.
@@ -38,9 +38,9 @@ Image.new('RGBA',(1280,1280),(0,0,0,0)).save(out/'resources/background.png')
 shutil.copy2(ROOT/'source/key-layout.json',out/'key-layout.json')
 shutil.copy2(ROOT/'source/key-highlights.json',out/'key-highlights.json')
 shutil.copy2(ROOT/'source/key-highlights.json',out/'resources/key-highlights.json')
-readme='''# 若腾武 / Ruotengwu Live2D 桌宠
+readme='''# 墨键 / InkKeys Live2D 桌宠
 
-将本文件夹或 ZIP 导入 BongoCat 1.11.0，选择 Ruotengwu。也可以把整个 Ruotengwu 文件夹放到用户模型目录，再重新扫描模型。
+将本文件夹或 ZIP 导入 BongoCat 1.11.0，选择 InkKeys。也可以把整个 InkKeys 文件夹放到用户模型目录，再重新扫描模型。
 
 形象：黑发、方框眼镜、黑高领、薄键鼠台。文件包含真实 MOC3 网格及表情/物理相关参数，不是 GIF 或静态图片桌宠。
 
@@ -60,7 +60,7 @@ resources/left-keys 内是逐键绘制的手部落点和高亮，不再是通用
 (out/'README.md').write_text(readme,encoding='utf-8')
 files={p.relative_to(out).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in out.rglob('*') if p.is_file()}
 (ROOT/'validation/package-sha256.json').write_text(json.dumps(files,indent=2),encoding='utf-8')
-zip_path=ROOT/'delivery/Ruotengwu-Live2D.zip'
+zip_path=ROOT/'delivery/InkKeys-Live2D.zip'
 with zipfile.ZipFile(zip_path,'w',zipfile.ZIP_DEFLATED) as z:
     for p in out.rglob('*'):
         if p.is_file():z.write(p,p.relative_to(out.parent))

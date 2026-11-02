@@ -1,31 +1,31 @@
 {
 	"Version": 3,
 	"FileReferences": {
-		"Moc": "Ruotengwu.moc3",
+		"Moc": "InkKeys.moc3",
 		"Textures": [
-			"Ruotengwu.4096/texture_00.png"
+			"InkKeys.4096/texture_00.png"
 		],
-		"Physics": "Ruotengwu.physics3.json",
-		"DisplayInfo": "Ruotengwu.cdi3.json",
+		"Physics": "InkKeys.physics3.json",
+		"DisplayInfo": "InkKeys.cdi3.json",
 		"Motions": {
 			"Idle": [
 				{
-					"File": "Ruotengwu.idle.motion3.json"
+					"File": "InkKeys.idle.motion3.json"
 				}
 			],
 			"Blink": [
 				{
-					"File": "Ruotengwu.blink.motion3.json"
+					"File": "InkKeys.blink.motion3.json"
 				}
 			],
 			"Nod": [
 				{
-					"File": "Ruotengwu.nod.motion3.json"
+					"File": "InkKeys.nod.motion3.json"
 				}
 			],
 			"Shake": [
 				{
-					"File": "Ruotengwu.shake.motion3.json"
+					"File": "InkKeys.shake.motion3.json"
 				}
 			]
 		}

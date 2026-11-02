@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser();p.add_argument('--scenario',default='all');p.add_argument('--pose',choices=['neutral','blink','halfblink','left','right','up','down','tilt-left','tilt-right','mouth']);p.add_argument('--import-model',action='store_true');p.add_argument('--import-zip',action='store_true');p.add_argument('--app',type=Path,default=Path(r'C:\Users\wjx\AppData\Local\Programs\BongoCat\BongoCat.exe'));a=p.parse_args()
-model=ROOT/'delivery/Ruotengwu';assert (model/'Ruotengwu.model3.json').is_file(),'Package the actual model first'
+model=ROOT/'delivery/InkKeys';assert (model/'InkKeys.model3.json').is_file(),'Package the actual model first'
 assert a.app.is_file(),a.app
 scenarios=['idle','key-left','key-tab-left','key-left-release','mouse-left','mouse-right','mouse-move','mouse-move-mirror','mouse-reverse','mouse-hand-screen'] if a.scenario=='all' else [a.scenario]
 if a.pose:scenarios=['motion-0']
@@ -34,13 +34,13 @@ for index,scenario in enumerate(scenarios):
     env=os.environ.copy();env['BONGO_CAT_TEST_INSTANCE_ID']=f'rtw-{os.getpid()}-{index}'
     args=[str(a.app),'--ci-smoke','--ci-ignore-global-input',f'--storage-root={store}',f'--nearby-root={empty}',f'--ci-live2d-scenario={scenario}',f'--ci-exit-ms={10000 if scenario=="idle" else 1600}']
     if (a.import_model or a.import_zip) and index==0:
-        args.append('--ci-import='+str(ROOT/'delivery/Ruotengwu-Live2D.zip' if a.import_zip else model))
+        args.append('--ci-import='+str(ROOT/'delivery/InkKeys-Live2D.zip' if a.import_zip else model))
     else:
         shutil.copytree(model,store/'models'/model.name)
         args.append(f'--ci-model={model.name}')
     if a.pose:
         local=store/'models'/model.name
-        mf=local/'Ruotengwu.model3.json';data=json.loads(mf.read_text())
+        mf=local/'InkKeys.model3.json';data=json.loads(mf.read_text())
         values={'ParamAngleX':0,'ParamAngleY':0,'ParamAngleZ':0,'ParamBodyAngleX':0,'ParamBodyAngleY':0,'ParamBodyAngleZ':0,'ParamEyeBallX':0,'ParamEyeBallY':0,'ParamEyeLOpen':1,'ParamEyeROpen':1,'ParamMouthOpenY':0,'ParamBreath':0,'ParamMouseX':0,'ParamMouseY':0,'CatParamLeftHandDown':0,'ParamMouseLeftDown':0,'ParamMouseRightDown':0}
         poses={'neutral':{},'blink':{'ParamEyeLOpen':0,'ParamEyeROpen':0},'halfblink':{'ParamEyeLOpen':.5,'ParamEyeROpen':.5},'left':{'ParamAngleX':-30,'ParamEyeBallX':-1},'right':{'ParamAngleX':30,'ParamEyeBallX':1},'up':{'ParamAngleY':30,'ParamEyeBallY':1},'down':{'ParamAngleY':-30,'ParamEyeBallY':-1},'tilt-left':{'ParamAngleZ':-12},'tilt-right':{'ParamAngleZ':12},'mouth':{'ParamMouthOpenY':1}}
         values.update(poses[a.pose]);curves=[{'Target':'Parameter','Id':k,'Segments':[0,v,0,2,v]} for k,v in values.items()]
@@ -70,9 +70,9 @@ for index,scenario in enumerate(scenarios):
     audit=store/'state/live2d-audit.txt';assert audit.is_file(),f'{scenario}: no native audit (single-instance exit is not success)'
     text=audit.read_text();fields=dict(line.split('=',1) for line in text.splitlines() if '=' in line)
     assert fields.get('renderer')=='cubism-native',fields
-    expected='ruotengwu-live2d' if a.import_zip and index==0 else 'ruotengwu'
+    expected='ink-keys-live2d' if a.import_zip and index==0 else 'ink-keys'
     assert fields.get('model','').lower()==expected,f'Wrong model loaded: {fields}'
-    expected_moc=hashlib.sha256((model/'Ruotengwu.moc3').read_bytes()).digest()
+    expected_moc=hashlib.sha256((model/'InkKeys.moc3').read_bytes()).digest()
     actual_mocs=list((store/'models'/fields['model']).rglob('*.moc3'))
     assert any(hashlib.sha256(p.read_bytes()).digest()==expected_moc for p in actual_mocs),'Runtime installed a different MOC3'
     assert fields.get('assertions')=='passed' and fields.get('operation')=='accepted',fields

@@ -5,7 +5,7 @@ import java.lang.reflect.*;
 import java.util.*;
 
 /** Reuses PSD2Live's authoring/export API; no custom MOC3 encoder. */
-class BuildRuotengwu {
+class BuildInkKeys {
   static final Set<String> INPUTS=Set.of("desktop","mouse","mouse-blue-left","mouse-blue-right","hand mouse","hand keyboard");
   static String id(Object o) throws Exception {
     if(o instanceof org.umamo.format.art.SourceLayer) return (String)org.umamo.format.art.SourceLayer.class.getMethod("getId-VrS5uwI").invoke(o);

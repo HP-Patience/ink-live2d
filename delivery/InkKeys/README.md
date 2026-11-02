@@ -1,6 +1,6 @@
-# 若腾武 / Ruotengwu Live2D 桌宠
+# 墨键 / InkKeys Live2D 桌宠
 
-将本文件夹或 ZIP 导入 BongoCat 1.11.0，选择 Ruotengwu。也可以把整个 Ruotengwu 文件夹放到用户模型目录，再重新扫描模型。
+将本文件夹或 ZIP 导入 BongoCat 1.11.0，选择 InkKeys。也可以把整个 InkKeys 文件夹放到用户模型目录，再重新扫描模型。
 
 形象：黑发、方框眼镜、黑高领、薄键鼠台。文件包含真实 MOC3 网格及表情/物理相关参数，不是 GIF 或静态图片桌宠。
 

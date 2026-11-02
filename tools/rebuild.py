@@ -4,8 +4,8 @@ import subprocess,sys
 ROOT=Path(__file__).resolve().parents[1]
 app=ROOT/'workspace/tools/PSD2Live/app'
 assert list(app.glob('*.jar')), 'Run tools/setup_tools.py first; it verifies the pinned upstream archive.'
-assert (ROOT/'source/Ruotengwu.psd').is_file(), 'Final editable PSD is missing'
-subprocess.run(['java','-Dfile.encoding=UTF-8','--class-path',str(app/'*'),str(ROOT/'tools/BuildRuotengwu.java'),str(ROOT/'source/Ruotengwu.psd'),str(ROOT/'workspace/export')],check=True,cwd=ROOT)
+assert (ROOT/'source/InkKeys.psd').is_file(), 'Final editable PSD is missing'
+subprocess.run(['java','-Dfile.encoding=UTF-8','--class-path',str(app/'*'),str(ROOT/'tools/BuildInkKeys.java'),str(ROOT/'source/InkKeys.psd'),str(ROOT/'workspace/export')],check=True,cwd=ROOT)
 subprocess.run([sys.executable,str(ROOT/'tools/package_model.py')],check=True,cwd=ROOT)
 subprocess.run([sys.executable,str(ROOT/'tools/check_assets.py'),'model'],check=True,cwd=ROOT)
 subprocess.run([sys.executable,str(ROOT/'tools/test_input_positions.py')],check=True,cwd=ROOT)

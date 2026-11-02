@@ -4,7 +4,7 @@ import hashlib,json
 from PIL import Image
 import numpy as np
 ROOT=Path(__file__).resolve().parents[1]
-folder=ROOT/'delivery/Ruotengwu/resources/left-keys'
+folder=ROOT/'delivery/InkKeys/resources/left-keys'
 names=['KeyA','KeyD','KeyJ','KeyZ','KeyP','Space','Return','UpArrow','Kp1']
 textures=[folder/(n+'.png') for n in names]
 assert all(p.is_file() for p in textures),'Missing named key resources'

@@ -15,7 +15,7 @@ if a.stage=='source':
     assert inp.mode=='RGB' and inp.size==im.size, 'Inference input must be a white RGB composite'
     expected=Image.new('RGBA',im.size,'white');expected.alpha_composite(im)
     assert np.array_equal(np.asarray(inp),np.asarray(expected.convert('RGB'))), 'Inference input changed identity pixels'
-    approved=ROOT.parents[0]/'ruotengwu-v3/ruotengwu-chibi-v3.png'
+    approved=ROOT.parents[0]/'ink-keys-v3/ink-keys-chibi-v3.png'
     assert hashlib.sha256(approved.read_bytes()).digest()==hashlib.sha256((ROOT/'source/approved.png').read_bytes()).digest(), 'Approved original was modified'
 elif a.stage=='inputs':
     for name in ['hand keyboard','hand mouse','mouse','desktop']:
@@ -38,12 +38,12 @@ elif a.stage=='layers':
         im=Image.open(path)
         assert im.mode=='RGBA' and im.size==(1280,1280), (name,im.mode,im.size)
         assert im.getchannel('A').getbbox(), f'Empty layer: {name}'
-    assert (ROOT/'source/Ruotengwu.psd').is_file(), 'Editable PSD is missing'
+    assert (ROOT/'source/InkKeys.psd').is_file(), 'Editable PSD is missing'
     from psd_tools import PSDImage
-    actual={layer.name for layer in PSDImage.open(ROOT/'source/Ruotengwu.psd')}
+    actual={layer.name for layer in PSDImage.open(ROOT/'source/InkKeys.psd')}
     assert set(names)<=actual, f'PSD semantic layer names missing: {set(names)-actual}'
 else:
-    folder=ROOT/'delivery/Ruotengwu'; manifest=folder/'Ruotengwu.model3.json'
+    folder=ROOT/'delivery/InkKeys'; manifest=folder/'InkKeys.model3.json'
     assert manifest.is_file(),'Exported model manifest missing'
     data=json.loads(manifest.read_text(encoding='utf-8')); refs=data['FileReferences']
     assets=[refs['Moc'],*refs['Textures'],refs['Physics'],refs['DisplayInfo']]
@@ -55,7 +55,7 @@ else:
     ids={item['Id'] for item in json.loads((folder/refs['DisplayInfo']).read_text(encoding='utf-8'))['Parameters']}
     required={'ParamAngleX','ParamAngleY','ParamEyeLOpen','ParamEyeROpen','ParamEyeBallX','ParamEyeBallY','ParamBreath','CatParamLeftHandDown','ParamMouseX','ParamMouseY','ParamMouseLeftDown','ParamMouseRightDown'}
     assert required<=ids, f'Missing required rig parameters: {sorted(required-ids)}'
-    assert (ROOT/'source/Ruotengwu.cmo3').is_file(),'Editable CMO3 missing'
+    assert (ROOT/'source/InkKeys.cmo3').is_file(),'Editable CMO3 missing'
     required_keys=['UpArrow','DownArrow','LeftArrow','RightArrow','Kp0','Kp9','NumLock','F1','F24','BracketLeft','BracketRight','Backslash','Semicolon','Period']
     assert all((folder/'resources/left-keys'/(key+'.png')).is_file() for key in required_keys),'Native key aliases missing'
 print(f'PASS {a.stage}: structural asset checks only; native visual/input validation is separate.')
