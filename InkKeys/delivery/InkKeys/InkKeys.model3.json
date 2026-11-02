@@ -1,0 +1,50 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "InkKeys.moc3",
+		"Textures": [
+			"InkKeys.4096/texture_00.png"
+		],
+		"Physics": "InkKeys.physics3.json",
+		"DisplayInfo": "InkKeys.cdi3.json",
+		"Motions": {
+			"Idle": [
+				{
+					"File": "InkKeys.idle.motion3.json"
+				}
+			],
+			"Blink": [
+				{
+					"File": "InkKeys.blink.motion3.json"
+				}
+			],
+			"Nod": [
+				{
+					"File": "InkKeys.nod.motion3.json"
+				}
+			],
+			"Shake": [
+				{
+					"File": "InkKeys.shake.motion3.json"
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthOpenY"
+			]
+		}
+	]
+}

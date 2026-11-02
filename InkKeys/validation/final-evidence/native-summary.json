@@ -1,0 +1,92 @@
+[
+  {
+    "scenario": "idle",
+    "exit": 0,
+    "renderer": "cubism-native",
+    "model": "Ruotengwu",
+    "audit": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\idle\\storage\\state\\live2d-audit.txt",
+    "frame": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\idle\\frame.png",
+    "idle_frames": 72
+  },
+  {
+    "scenario": "key-left",
+    "exit": 0,
+    "renderer": "cubism-native",
+    "model": "Ruotengwu",
+    "audit": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\key-left\\storage\\state\\live2d-audit.txt",
+    "frame": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\key-left\\frame.png",
+    "idle_frames": 0
+  },
+  {
+    "scenario": "key-tab-left",
+    "exit": 0,
+    "renderer": "cubism-native",
+    "model": "Ruotengwu",
+    "audit": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\key-tab-left\\storage\\state\\live2d-audit.txt",
+    "frame": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\key-tab-left\\frame.png",
+    "idle_frames": 0
+  },
+  {
+    "scenario": "key-left-release",
+    "exit": 0,
+    "renderer": "cubism-native",
+    "model": "Ruotengwu",
+    "audit": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\key-left-release\\storage\\state\\live2d-audit.txt",
+    "frame": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\key-left-release\\frame.png",
+    "idle_frames": 0
+  },
+  {
+    "scenario": "mouse-left",
+    "exit": 0,
+    "renderer": "cubism-native",
+    "model": "Ruotengwu",
+    "audit": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-left\\storage\\state\\live2d-audit.txt",
+    "frame": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-left\\frame.png",
+    "idle_frames": 0
+  },
+  {
+    "scenario": "mouse-right",
+    "exit": 0,
+    "renderer": "cubism-native",
+    "model": "Ruotengwu",
+    "audit": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-right\\storage\\state\\live2d-audit.txt",
+    "frame": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-right\\frame.png",
+    "idle_frames": 0
+  },
+  {
+    "scenario": "mouse-move",
+    "exit": 0,
+    "renderer": "cubism-native",
+    "model": "Ruotengwu",
+    "audit": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-move\\storage\\state\\live2d-audit.txt",
+    "frame": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-move\\frame.png",
+    "idle_frames": 0
+  },
+  {
+    "scenario": "mouse-move-mirror",
+    "exit": 0,
+    "renderer": "cubism-native",
+    "model": "Ruotengwu",
+    "audit": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-move-mirror\\storage\\state\\live2d-audit.txt",
+    "frame": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-move-mirror\\frame.png",
+    "idle_frames": 0
+  },
+  {
+    "scenario": "mouse-reverse",
+    "exit": 0,
+    "renderer": "cubism-native",
+    "model": "Ruotengwu",
+    "audit": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-reverse\\storage\\state\\live2d-audit.txt",
+    "frame": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-reverse\\frame.png",
+    "idle_frames": 0
+  },
+  {
+    "scenario": "mouse-hand-screen",
+    "exit": 0,
+    "renderer": "cubism-native",
+    "model": "Ruotengwu",
+    "audit": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-hand-screen\\storage\\state\\live2d-audit.txt",
+    "frame": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\native\\20260921-233720\\mouse-hand-screen\\frame.png",
+    "idle_frames": 0
+  }
+]

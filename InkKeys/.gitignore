@@ -1,0 +1,16 @@
+# Ignore local production caches and raw runtime captures; curated evidence is committed separately.
+workspace/
+revisions/
+validation/native/
+validation/input-position-native/
+validation/baseline/
+validation/baseline-screen/
+validation/*/storage/
+validation/*/empty/
+validation/*/frames/
+validation/*/models/
+validation/*/cache/
+validation/*.bmp
+validation/*.gif
+validation/*.mp4
+validation/xet-stall-processes.json

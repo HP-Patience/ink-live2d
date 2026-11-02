@@ -1,0 +1,40 @@
+{
+  "processId": 63548,
+  "model": "Ruotengwu",
+  "installed": "C:\\Users\\wjx\\AppData\\Local\\BongoCat\\models\\Ruotengwu",
+  "rollback": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\revisions\\before-keyboard-orientation-fix\\installed-at-reload",
+  "testedRun": "E:\\BongoCat\\artifacts\\ruotengwu-live2d\\validation\\input-position-native\\20260922-122405",
+  "mocSha256": "3AD2AA15E090B09E02971FDA5B3E5DFF8AD5BDE34ACE8E585A49F4A6255D8847",
+  "nativeAuditPassed": true,
+  "settingsUnchanged": true,
+  "windowBefore": {
+    "visible": false,
+    "scalePercent": 50.0,
+    "opacityPercent": 100.0,
+    "position": {
+      "x": 1674,
+      "y": 858
+    },
+    "size": {
+      "width": 177,
+      "height": 177,
+      "contentWidth": 177,
+      "contentHeight": 177
+    }
+  },
+  "windowAfter": {
+    "visible": true,
+    "scalePercent": 50.0,
+    "opacityPercent": 100.0,
+    "position": {
+      "x": 1674,
+      "y": 858
+    },
+    "size": {
+      "width": 177,
+      "height": 177,
+      "contentWidth": 177,
+      "contentHeight": 177
+    }
+  }
+}

@@ -1,0 +1,12 @@
+diffusers==0.37.0
+transformers==5.0.0
+huggingface-hub==1.7.2
+accelerate==1.13.0
+bitsandbytes==0.49.2
+psd-tools[composite]==1.14.2
+einops==0.8.2
+safetensors==0.7.0
+omegaconf==2.3.0
+simple-parsing==0.1.8
+peft==0.21.0
+pycocotools==2.0.11
