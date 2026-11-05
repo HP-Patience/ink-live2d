@@ -60,6 +60,11 @@ export class LAppSubdelegate {
 
     this._canvas = canvas;
 
+    // マウスがキャンバス外へ出たら視線を正面（中央）に戻す
+    this._canvas.addEventListener('pointerleave', () => {
+      this._live2dManager?.onDrag(0.0, 0.0);
+    });
+
     if (LAppDefine.CanvasSize === 'auto') {
       this.resizeCanvas();
     } else {
@@ -135,8 +140,8 @@ export class LAppSubdelegate {
 
     const gl = this._glManager.getGl();
 
-    // 画面の初期化
-    gl.clearColor(30/255, 32/255, 38/255, 1.0);
+    // 画面の初期化（背景なし：アルファ 0 でクリアし、キャンバスを透明にする）
+    gl.clearColor(0.0, 0.0, 0.0, 0.0);
 
     // 深度テストを有効化
     gl.enable(gl.DEPTH_TEST);
@@ -273,9 +278,12 @@ export class LAppSubdelegate {
 
   /**
    * マウスポインタが動いたら呼ばれる。
+   *
+   * 元実装はドラッグ中（_captured）のみ視線を更新していたが、
+   * ここではホバーだけでも追従させるため常にビューへ座標を渡す。
    */
   public onPointMoved(pageX: number, pageY: number): void {
-    if (!this._captured) {
+    if (!this._view) {
       return;
     }
 
